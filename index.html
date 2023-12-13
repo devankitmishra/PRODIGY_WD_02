@@ -11,7 +11,7 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0;
+      background-color: black;
     }
 
     #stopwatch {
@@ -19,7 +19,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: conic-gradient(from 0deg, #3498db, #e74c3c);
+      background: conic-gradient(from 0deg, rgb(158, 158, 0), rgb(2, 151, 2));
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
@@ -35,24 +35,29 @@
     #controls {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
     }
 
     button {
-      margin: 0 10px;
+      margin:10px;
       padding: 10px 20px;
       font-size: 16px;
+      font-family: cursive;
       cursor: pointer;
+      border-radius: 15px;
+      background-color: chartreuse;
     }
   </style>
 </head>
 <body>
+    <div id="controls">
+        <button onclick="startStopwatch()">Start</button>
+    </div>
   <div id="stopwatch">
     <div id="time">00:00:00</div>
   </div>
 
   <div id="controls">
-    <button onclick="startStopwatch()">Start</button>
+    
     <button onclick="pauseStopwatch()">Pause</button>
     <button onclick="resetStopwatch()">Reset</button>
   </div>
