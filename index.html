@@ -4,49 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stopwatch App</title>
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: black;
-    }
-
-    #stopwatch {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: conic-gradient(from 0deg, rgb(158, 158, 0), rgb(2, 151, 2));
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    #time {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-      color: #fff;
-    }
-
-    #controls {
-      display: flex;
-      justify-content: center;
-    }
-
-    button {
-      margin:10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      font-family: cursive;
-      cursor: pointer;
-      border-radius: 15px;
-      background-color: chartreuse;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="controls">
@@ -62,50 +20,6 @@
     <button onclick="resetStopwatch()">Reset</button>
   </div>
 
-  <script>
-    let timer;
-    let seconds = 0;
-    let minutes = 0;
-    let hours = 0;
-
-    function startStopwatch() {
-      if (!timer) {
-        timer = setInterval(updateTime, 1000);
-      }
-    }
-
-    function pauseStopwatch() {
-      clearInterval(timer);
-      timer = null;
-    }
-
-    function resetStopwatch() {
-      clearInterval(timer);
-      timer = null;
-      seconds = -1;
-      minutes = 0;
-      hours = 0;
-      updateTime();
-    }
-
-    function updateTime() {
-      seconds++;
-      if (seconds === 60) {
-        seconds = 0;
-        minutes++;
-        if (minutes === 60) {
-          minutes = 0;
-          hours++;
-        }
-      }
-
-      const timeString = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-      document.getElementById('time').innerText = timeString;
-    }
-
-    function pad(value) {
-      return value < 10 ? `0${value}` : value;
-    }
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
